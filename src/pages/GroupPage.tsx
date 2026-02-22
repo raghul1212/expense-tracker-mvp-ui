@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { groupsAPI, expensesAPI, type Group, type Expense, type Balance, type Settlement } from '../lib/api';
 import AddExpenseModal from '../components/AddExpenseModal';
 import AddMemberModal from '../components/AddMemberModal';
+import { formatDateToLocalDate } from '../utils/DateTimeUtils';
 
 export default function GroupPage() {
   const { groupId } = useParams<{ groupId: string }>();
@@ -290,7 +291,7 @@ export default function GroupPage() {
 
                         <div className="mt-3 flex items-center justify-between text-sm">
                           <span className="text-gray-500">
-                            {new Date(expense.expense_date).toLocaleDateString()}
+                            {formatDateToLocalDate(expense.expenseDate)}
                           </span>
                           <button
                             onClick={() => handleDeleteExpense(expense.id)}

@@ -41,7 +41,7 @@ export interface Expense {
     name: string;
     email: string;
   };
-  expense_date: string;
+  expenseDate: string;
   notes?: string;
   splits: {
     user_id: string;
@@ -108,7 +108,7 @@ export const expensesAPI = {
     description: string;
     amount: number;
     category?: string;
-    expense_date?: string;
+    expenseDate?: string;
     notes?: string;
     paid_by_email: string;
     split_with_emails: string[];

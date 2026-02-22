@@ -59,7 +59,7 @@ export default function AddExpenseModal({ group, onClose, onSuccess }: AddExpens
         description: formData.description,
         amount: parseFloat(formData.amount),
         category: formData.category,
-        expense_date: formData.date,
+        expenseDate: formData.date,
         notes: formData.notes || undefined,
         paid_by_email: formData.paidByEmail,
         split_with_emails: formData.splitWith,

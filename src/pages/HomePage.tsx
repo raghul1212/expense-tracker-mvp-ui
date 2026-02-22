@@ -5,7 +5,7 @@ export default function HomePage() {
   const navigate = useNavigate();
   const [groupId, setGroupId] = useState('');
 
-  const handleJoinGroup = (e: React.FormEvent) => {
+  const handleJoinGroup = (e: React.SubmitEvent) => {
     e.preventDefault();
     if (groupId.trim()) {
       navigate(`/groups/${groupId.trim()}`);
@@ -43,10 +43,12 @@ export default function HomePage() {
 
           <form onSubmit={handleJoinGroup}>
             <input
+              name='groupId'
               type="text"
               value={groupId}
               onChange={(e) => setGroupId(e.target.value)}
               placeholder="Enter Group ID to join"
+              required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
             />
             <button
